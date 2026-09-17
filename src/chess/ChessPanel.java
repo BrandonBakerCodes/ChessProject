@@ -2,8 +2,6 @@ package chess;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.sql.Array;
-import java.util.ArrayList;
 import javax.swing.*;
 
 public class ChessPanel extends JPanel {
@@ -11,11 +9,6 @@ public class ChessPanel extends JPanel {
     private JButton[][] board;
     private JButton undo;
     private ChessModel model;
-
-    private JButton promoQueen;
-    private JButton promoBishop;
-    private JButton promoKnight;
-    private JButton promoRook;
 
     private ImageIcon wRook;
     private ImageIcon wBishop;
@@ -81,52 +74,6 @@ public class ChessPanel extends JPanel {
         add(boardpanel, BorderLayout.WEST);
         boardpanel.setPreferredSize(new Dimension(600, 600));
         add(buttonpanel);
-
-        ImageIcon BQ = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/bQueen.png");
-        promoQueen = new JButton(null, BQ);
-        ImageIcon BR = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/bRook.png");
-        promoRook = new JButton(null, BQ);
-        ImageIcon BB = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/bBishop.png");
-        promoBishop = new JButton(null, BQ);
-        ImageIcon BK = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/bKnight.png");
-        promoKnight = new JButton(null, BQ);
-        ImageIcon WQ = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/wQueen.png");
-//        wpromoQueen = new JButton(null, BQ);
-//        ImageIcon WR = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/wRook.png");
-//        wpromoRook = new JButton(null, BQ);
-//        ImageIcon WB = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/wBishop.png");
-//        wpromoBishop = new JButton(null, BQ);
-//        ImageIcon WK = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/wKnight.png");
-//        wpromoKight = new JButton(null, BQ);
-        add(promoQueen);
-        add(promoRook);
-        add(promoBishop);
-        add(promoKnight);
-//        add();
-//        add();
-//        add();
-//        add();
-//        add();
-//        add();
-//        add();
-        promoQueen.addActionListener(listener);
-        promoQueen.setVisible(false);
-        promoRook.addActionListener(listener);
-        promoRook.setVisible(false);
-        promoBishop.addActionListener(listener);
-        promoBishop.setVisible(false);
-        promoKnight.addActionListener(listener);
-        promoKnight.setVisible(false);
-//        promoQueen.addActionListener(listener);
-//        promoQueen.setVisible(false);
-//        promoQueen.addActionListener(listener);
-//        promoQueen.setVisible(false);
-//        promoQueen.addActionListener(listener);
-//        promoQueen.setVisible(false);
-//        promoQueen.addActionListener(listener);
-//        promoQueen.setVisible(false);
-
-
         firstTurnFlag = true;
         whiteTurn = true;
     }
@@ -194,53 +141,21 @@ public class ChessPanel extends JPanel {
     }
 
     private void createIcons() {
-//        // Sets the Image for white player pieces
-//        wRook = new ImageIcon("C:/Users/Brandon/IdeaProjects/CIS163/src/chess/wRook.png");
-//        wBishop = new ImageIcon("C:/Users/Brandon/IdeaProjects/CIS163/src/chess/wBishop.png");
-//        wQueen = new ImageIcon("C:/Users/Brandon/IdeaProjects/CIS163/src/chess/wQueen.png");
-//        wKing = new ImageIcon("C:/Users/Brandon/IdeaProjects/CIS163/src/chess/wKing.png");
-//        wPawn = new ImageIcon("C:/Users/Brandon/IdeaProjects/CIS163/src/chess/wPawn.png");
-//        wKnight = new ImageIcon("C:/Users/Brandon/IdeaProjects/CIS163/src/chess/wKnight.png");
-//
-//        // Sets the Image for black player pieces
-//        bRook = new ImageIcon("C:/Users/Brandon/IdeaProjects/CIS163/src/chess/bRook.png");
-//        bBishop = new ImageIcon("C:/Users/Brandon/IdeaProjects/CIS163/src/chess/bBishop.png");
-//        bQueen = new ImageIcon("C:/Users/Brandon/IdeaProjects/CIS163/src/chess/bQueen.png");
-//        bKing = new ImageIcon("C:/Users/Brandon/IdeaProjects/CIS163/src/chess/bKing.png");
-//        bPawn = new ImageIcon("C:/Users/Brandon/IdeaProjects/CIS163/src/chess/bPawn.png");
-//        bKnight = new ImageIcon("C:/Users/Brandon/IdeaProjects/CIS163/src/chess/bKnight.png");
-
         // Sets the Image for white player pieces
-        wRook = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/wRook.png");
-        wBishop = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/wBishop.png");
-        wQueen = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/wQueen.png");
-        wKing = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/wKing.png");
-        wPawn = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/wPawn.png");
-        wKnight = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/wKnight.png");
+        wRook = new ImageIcon("src/chess/images/wRook.png");
+        wBishop = new ImageIcon("src/chess/images/wBishop.png");
+        wQueen = new ImageIcon("src/chess/images/wQueen.png");
+        wKing = new ImageIcon("src/chess/images/wKing.png");
+        wPawn = new ImageIcon("src/chess/images/wPawn.png");
+        wKnight = new ImageIcon("src/chess/images/wKnight.png");
 
         // Sets the Image for black player pieces
-        bRook = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/bRook.png");
-        bBishop = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/bBishop.png");
-        bQueen = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/bQueen.png");
-        bKing = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/bKing.png");
-        bPawn = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/bPawn.png");
-        bKnight = new ImageIcon("C:/Users/benja/OneDrive/Documents/CIS 163/piece images/bKnight.png");
-
-//        // Sets the Image for white player pieces
-//        wRook = new ImageIcon("C:/Users/polar/GitHub/ChessPRJ/src/chess/wRook.png");
-//        wBishop = new ImageIcon("C:/Users/polar/GitHub/ChessPRJ/src/chess/wBishop.png");
-//        wQueen = new ImageIcon("C:/Users/polar/GitHub/ChessPRJ/src/chess/wQueen.png");
-//        wKing = new ImageIcon("C:/Users/polar/GitHub/ChessPRJ/src/chess/wKing.png");
-//        wPawn = new ImageIcon("C:/Users/polar/GitHub/ChessPRJ/src/chess/wPawn.png");
-//        wKnight = new ImageIcon("C:/Users/polar/GitHub/ChessPRJ/src/chess/wKnight.png");
-//
-//        // Sets the Image for black player pieces
-//        bRook = new ImageIcon("C:/Users/polar/GitHub/ChessPRJ/src/chess/bRook.png");
-//        bBishop = new ImageIcon("C:/Users/polar/GitHub/ChessPRJ/src/chess/bBishop.png");
-//        bQueen = new ImageIcon("C:/Users/polar/GitHub/ChessPRJ/src/chess/bQueen.png");
-//        bKing = new ImageIcon("C:/Users/polar/GitHub/ChessPRJ/src/chess/bKing.png");
-//        bPawn = new ImageIcon("C:/Users/polar/GitHub/ChessPRJ/src/chess/bPawn.png");
-//        bKnight = new ImageIcon("C:/Users/polar/GitHub/ChessPRJ/src/chess/bKnight.png");
+        bRook = new ImageIcon("src/chess/images/bRook.png");
+        bBishop = new ImageIcon("src/chess/images/bBishop.png");
+        bQueen = new ImageIcon("src/chess/images/bQueen.png");
+        bKing = new ImageIcon("src/chess/images/bKing.png");
+        bPawn = new ImageIcon("src/chess/images/bPawn.png");
+        bKnight = new ImageIcon("src/chess/images/bKnight.png");
 
     }
 
